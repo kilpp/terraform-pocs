@@ -1,3 +1,4 @@
+# ssh-keygen -f aws-vm-key    
 resource "aws_key_pair" "vm_key" {
     key_name = "aws-vm-key"
     public_key = file("./aws-vm-key.pub")

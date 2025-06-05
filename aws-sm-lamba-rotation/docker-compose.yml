@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  localstack:
+    image: localstack/localstack:latest
+    ports:
+      - "4566:4566"
+    environment:
+      - DEBUG=1
+      - DOCKER_HOST=unix:///var/run/docker.sock
+      - PERSISTENCE=/ect/localstack/data
+      - SERVICES=iam,secretsmanager,lambda
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock"
+      - ./temp/data:/etc/localstack/data
+    privileged: true

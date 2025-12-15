@@ -9,7 +9,7 @@ terraform {
 }
 
 # Configure the AWS Provider
-provider "aws" {
+provider "azure" {
   region = "sa-east-1"
   default_tags {
     tags = {
